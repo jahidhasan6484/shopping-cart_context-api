@@ -1,21 +1,20 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../App";
 
 const Products = ({ product }) => {
-    const [cartItems, setCartItems, productsItems] = useContext(CartContext);
+    const [cart, setCart, productsItems] = useContext(CartContext);
 
     const handleAddToCart = (product) => {
-        const productExist = cartItems.find((item) => item.id === product.id);
+        const productExist = cart.find((item) => item.id === product.id);
 
-        if (productExist) {
-            setCartItems(
-                cartItems.map((item) => item.id === product.id ? {
-                    ...productExist, quantity: productExist.quantity + 1
-                } : item
-                )
-            )
+        if(productExist) {
+            alert("Already added to the cart")
         } else {
-            setCartItems([...cartItems, { ...product, quantity: 1 }])
+            let tempCart = [...cart]
+            tempCart.push(product)
+            localStorage.setItem("cart", JSON.stringify(tempCart))
+         
+            setCart(tempCart)
         }
     }
 

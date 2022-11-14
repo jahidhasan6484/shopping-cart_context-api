@@ -13,10 +13,18 @@ export const CartContext = createContext();
 function App() {
   const { productsItems } = data;
 
-  const [cartItems, setCartItems] = useState([]);
+  const [cart, setCart] = useState([])
+
+  useEffect(()=> {
+
+    if(JSON.parse(localStorage.getItem('cart'))) {
+      setCart(JSON.parse(localStorage.getItem('cart')))
+    }
+
+  }, [])
 
   return (
-    <CartContext.Provider value={[cartItems, setCartItems, productsItems]}>
+    <CartContext.Provider value={[cart, setCart, productsItems]}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

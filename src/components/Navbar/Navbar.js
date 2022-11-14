@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../../App';
 
 const Navbar = () => {
-    const [cartItems, setCartItems, productsItems] = useContext(CartContext);
+    const [cart, setCart, productsItems] = useContext(CartContext);
+
+    const cartTotal = () => {
+        return cart.reduce(function (acc, obj) { return acc + obj.price * obj.quantity; }, 0);
+    }
 
     return (
         <nav className="navbar navbar-expand-lg bg-light">
@@ -34,9 +38,10 @@ const Navbar = () => {
                             <a className="nav-link disabled">Disabled</a>
                         </li>
                     </ul>
-                    <div className="d-flex">
+                    <div className="d-flex gap-2">
+                        <button className='btn btn-outline-dark'>{cartTotal()} taka</button>
                         <Link to="/cart">
-                            <button className="btn btn-outline-success" type="submit">Cart {cartItems.length}</button>
+                            <button className="btn btn-outline-success" type="submit">Cart {cart.length}</button>
                         </Link>
                     </div>
                 </div>

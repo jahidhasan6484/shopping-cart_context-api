@@ -3,7 +3,7 @@ import { CartContext } from "../../App";
 import Products from "../Products/Products";
 
 const Home = () => {
-    const [cartItems, setCartItems, productsItems] = useContext(CartContext);
+    const [cart, setCart, productsItems] = useContext(CartContext);
 
     return (
         <div className="container">

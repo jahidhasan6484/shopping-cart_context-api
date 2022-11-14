@@ -1,0 +1,36 @@
+.cart_row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    text-align: right;
+    font-weight: 600;
+}
+
+.first {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.second, .third {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.third {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.fourth {
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
