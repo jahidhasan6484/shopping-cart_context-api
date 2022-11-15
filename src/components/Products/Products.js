@@ -22,7 +22,7 @@ const Products = ({ product }) => {
         <div className="col-md-3">
             <div className="card m-2 p-2">
                 <p>{product.name}</p>
-                <p>{product.price}</p>
+                <p>Price: ৳ {product.price}</p>
                 <button className="btn btn-dark" onClick={() => handleAddToCart(product)}>Add to cart</button>
             </div>
         </div>

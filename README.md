@@ -1,3 +1,5 @@
-# Shopping Cart
+# https://shoppingcart-jahid.netlify.app/
 
-Using React hooks, Contect API and Fake data
+This shopping cart build using React hooks, Contect API and Fake data and Localhost. 
+
+Enjoy Shopping!
