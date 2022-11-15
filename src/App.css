@@ -10,27 +10,19 @@
     font-weight: 600;
 }
 
-.first {
+.quantity_content {
     display: flex;
     align-items: center;
+    gap: 10px;
+}
+
+.first,
+.second,
+.third,
+.fourth {
     text-align: left;
 }
 
-.second, .third {
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-.third {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-}
-
-.fourth {
-    display: flex;
-    align-items: center;
-    text-align: right;
+svg {
+    cursor: pointer;
 }
